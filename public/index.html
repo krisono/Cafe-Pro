@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CafePro — Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <nav class="nav">
+        <div class="nav-brand">CafePro</div>
+        <div class="nav-links">
+          <a href="/" class="active">Dashboard</a>
+          <a href="/inventory.html">Inventory</a>
+          <a href="/delivery.html">Log Delivery</a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="page-header flex-between">
+          <div>
+            <h1>Good morning ☀️</h1>
+            <p id="today-date" class="text-muted"></p>
+          </div>
+          <button class="btn btn-primary" id="refresh-brief-btn">
+            <span class="spinner hidden" id="brief-spinner"></span>
+            ⟳ Refresh Brief
+          </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid" id="stats-grid">
+          <a class="stat-card" href="/inventory.html">
+            <div class="stat-value" id="stat-total">—</div>
+            <div class="stat-label">Total Items</div>
+          </a>
+          <a class="stat-card" href="/inventory.html?urgency=urgent">
+            <div
+              class="stat-value"
+              style="color: var(--color-urgent)"
+              id="stat-urgent"
+            >
+              —
+            </div>
+            <div class="stat-label">Expiring Today / Tomorrow</div>
+          </a>
+          <a class="stat-card" href="/inventory.html?urgency=warning">
+            <div
+              class="stat-value"
+              style="color: var(--color-warning)"
+              id="stat-week"
+            >
+              —
+            </div>
+            <div class="stat-label">Expiring This Week</div>
+          </a>
+          <a class="stat-card" href="/inventory.html?urgency=low">
+            <div
+              class="stat-value"
+              style="color: var(--color-low)"
+              id="stat-low"
+            >
+              —
+            </div>
+            <div class="stat-label">Below Reorder Point</div>
+          </a>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="dashboard-grid">
+          <!-- Daily Brief -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">📋 Daily Brief</span>
+              <span
+                id="brief-source"
+                class="text-muted"
+                style="font-size: 0.75rem"
+              ></span>
+            </div>
+            <div id="brief-content">
+              <div class="brief-loading">
+                <div class="spinner"></div>
+                <p class="mt-1">Generating your daily brief…</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Urgency Sidebar -->
+          <div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title">🚨 Most Urgent</span>
+                <a
+                  href="/inventory.html?urgency=urgent"
+                  style="font-size: 0.8rem; color: var(--color-primary)"
+                  >View all →</a
+                >
+              </div>
+              <ul class="urgency-list" id="urgency-list">
+                <li class="brief-loading">Loading…</li>
+              </ul>
+            </div>
+
+            <div class="card mt-2">
+              <div class="card-header">
+                <span class="card-title">🔴 Reorder Needed</span>
+                <a
+                  href="/inventory.html?urgency=low"
+                  style="font-size: 0.8rem; color: var(--color-primary)"
+                  >View all →</a
+                >
+              </div>
+              <ul class="urgency-list" id="reorder-list">
+                <li class="brief-loading">Loading…</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

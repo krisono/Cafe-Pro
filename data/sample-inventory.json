@@ -1,0 +1,22 @@
+{
+  "_comment": "Synthetic sample data only. No real business data. See seed-inventory.json for full seed with batches and usage history.",
+  "items": [
+    { "name": "Avocados",         "category": "produce",   "unit": "lbs",     "reorder_point": 10 },
+    { "name": "Strawberries",     "category": "produce",   "unit": "lbs",     "reorder_point": 5  },
+    { "name": "Baby Spinach",     "category": "produce",   "unit": "lbs",     "reorder_point": 3  },
+    { "name": "Tomatoes",         "category": "produce",   "unit": "lbs",     "reorder_point": 8  },
+    { "name": "Blueberries",      "category": "produce",   "unit": "lbs",     "reorder_point": 4  },
+    { "name": "Whole Milk",       "category": "dairy",     "unit": "gallons", "reorder_point": 4  },
+    { "name": "Heavy Cream",      "category": "dairy",     "unit": "tubs",    "reorder_point": 2  },
+    { "name": "Greek Yogurt",     "category": "dairy",     "unit": "tubs",    "reorder_point": 5  },
+    { "name": "Butter",           "category": "dairy",     "unit": "lbs",     "reorder_point": 3  },
+    { "name": "Chicken Breast",   "category": "protein",   "unit": "lbs",     "reorder_point": 10 },
+    { "name": "Smoked Salmon",    "category": "protein",   "unit": "lbs",     "reorder_point": 3  },
+    { "name": "Ground Beef",      "category": "protein",   "unit": "lbs",     "reorder_point": 8  },
+    { "name": "Oat Milk",         "category": "beverages", "unit": "gallons", "reorder_point": 3  },
+    { "name": "Orange Juice",     "category": "beverages", "unit": "gallons", "reorder_point": 2  },
+    { "name": "Espresso Beans",   "category": "dry_goods", "unit": "bags",    "reorder_point": 5  },
+    { "name": "All-Purpose Flour","category": "dry_goods", "unit": "bags",    "reorder_point": 10 },
+    { "name": "Brown Sugar",      "category": "dry_goods", "unit": "bags",    "reorder_point": 5  }
+  ]
+}

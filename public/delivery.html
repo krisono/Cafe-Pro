@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CafePro — Log Delivery</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <nav class="nav">
+        <div class="nav-brand">CafePro</div>
+        <div class="nav-links">
+          <a href="/">Dashboard</a>
+          <a href="/inventory.html">Inventory</a>
+          <a href="/delivery.html" class="active">Log Delivery</a>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="page-header">
+          <h1>Log Delivery</h1>
+          <p class="text-muted">
+            Record a new supplier delivery and update stock levels.
+          </p>
+        </div>
+
+        <div class="card" style="max-width: 860px">
+          <form id="delivery-form">
+            <!-- Delivery Meta -->
+            <div class="form-row mb-1">
+              <div class="form-group">
+                <label>Supplier Name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="supplier-name"
+                  placeholder="e.g. Fresh Farm Co"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Date Received *</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="received-date"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Notes</label>
+              <input
+                type="text"
+                class="form-control"
+                id="delivery-notes"
+                placeholder="Optional delivery notes…"
+              />
+            </div>
+
+            <hr
+              style="
+                border: none;
+                border-top: 1px solid var(--color-border);
+                margin: 1.25rem 0;
+              "
+            />
+
+            <!-- Item Rows Header -->
+            <div class="card-title mb-1">Items Received</div>
+            <div class="delivery-items-header">
+              <span>Item</span>
+              <span>Quantity</span>
+              <span>Expiration Date</span>
+              <span>Source</span>
+              <span></span>
+            </div>
+
+            <div id="delivery-rows"></div>
+
+            <button
+              type="button"
+              class="btn btn-secondary btn-sm mt-1"
+              id="add-row-btn"
+            >
+              + Add Item Row
+            </button>
+
+            <div
+              style="
+                margin-top: 1.5rem;
+                display: flex;
+                gap: 0.75rem;
+                justify-content: flex-end;
+              "
+            >
+              <a href="/inventory.html" class="btn btn-secondary">Cancel</a>
+              <button type="submit" class="btn btn-primary" id="submit-btn">
+                Submit Delivery
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/delivery.js"></script>
+  </body>
+</html>
