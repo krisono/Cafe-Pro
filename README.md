@@ -47,4 +47,4 @@ Test Commands:
 - Known limitations:
   - Uses very basic data and doesnt use a lot of realistic standards. The UI is also not finely tuned and specific. THe AI suggestions is also fluid and could be wrong which is why the fallback logic is important. I also didnt have enough time to really furnish the front end UI and fix minor bugs. 
 
-### Video link:
+### Video link: https://youtu.be/Y70TL0Cc45w
